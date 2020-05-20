@@ -1,0 +1,78 @@
+<ItemLabel@Label>:
+    font_size: 15
+    font_name: 'Got'
+    bold:'True' 
+    outline_width: 2
+    outline_color: [0,0,0]
+<InputAnchorLayout@AnchorLayout>:
+    txt: txt
+    anchor_x: 'center'
+    anchor_y: 'top'
+    padding: 5, 15
+    TextInput:
+        id: txt
+        text: ''
+        input_filter:'int'
+        multiline:False
+
+<MainWidget>:
+    a: a
+    b: b
+    c: c
+    d: d
+    igrek: igrek
+    x1: x1
+    x2: x2
+    x3: x3
+    x4: x4
+    ItemLabel:
+        text: 'Pavliuk Oleksii, IO-72'
+        size_hint_y: .15
+    ItemLabel:
+        text: 'Solution     a*x1 + b*x2 + c*x3 + d*x4 = y'
+        size_hint_y: .15
+    GridLayout:
+        size_hint_y:.2
+        cols: 5
+        ItemLabel:
+            text: 'a'
+        ItemLabel:
+            text: 'b'
+        ItemLabel:
+            text: 'c'
+        ItemLabel:
+            text: 'd'
+        ItemLabel:
+            text: 'y'
+        InputAnchorLayout:
+            id: a
+        InputAnchorLayout:
+            id: b
+        InputAnchorLayout:
+            id: c
+        InputAnchorLayout:
+            id: d
+        InputAnchorLayout:
+            id: igrek
+    AnchorLayout:
+        size_hint_y: .1
+        padding: 5,10
+        anchor: ['center','center']
+        Button:
+            text: 'Solve'
+            font_name: 'Got'
+            size_hint_x: .3
+            background_color: [.4,.12, .12, .65]
+            background_normal: ''
+            on_press: root.solve()
+    GridLayout:
+        cols: 2
+        size_hint_y: .4
+        ItemLabel:
+            id: x1
+        ItemLabel:
+            id: x2
+        ItemLabel:
+            id: x3
+        ItemLabel:
+            id: x4
