@@ -14,7 +14,20 @@
         text: ''
         input_filter:'int'
         multiline:False
-
+<MyPopup@Popup>:
+    numiter: numiter
+    auto_dismiss: False
+    title: 'Number of generations:'
+    size_hint: None, None
+    size: 180, 120
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: numgen
+        Button:
+            text: 'Close'
+            on_release: root.dismiss()
+            
 <MainWidget>:
     a: a
     b: b
