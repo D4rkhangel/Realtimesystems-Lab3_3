@@ -60,11 +60,14 @@ class MainWidget(BoxLayout):
     orientation = 'vertical'
     def solve(self):
         a,b,c,d,y = float(self.a.txt.text), float(self.b.txt.text), float(self.c.txt.text), float(self.d.txt.text), float(self.igrek.txt.text)
-        result = solve(a,b,c,d,y)[0]
+        result, numgen = solve(a,b,c,d,y)
         self.x1.text = 'x1 = {0}'.format(result[0])
         self.x2.text = 'x2 = {0}'.format(result[1])
         self.x3.text = 'x3 = {0}'.format(result[2])
         self.x4.text = 'x4 = {0}'.format(result[3])
+        mypopup = Factory.MyPopup()
+        mypopup.numgen.text = str(numgen)
+        mypopup.open()
         
 class Lab3_3App(App):
     def build(self):
